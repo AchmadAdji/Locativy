@@ -1,0 +1,115 @@
+/* Navbar */
+.navbar {
+    padding: 0.5rem 2rem;
+    height: 75px;
+    background-color: white;
+    border-bottom: 2px solid #e9e9e9; 
+}
+
+.navbar-nav .nav-item {
+    margin-right: 1rem; 
+
+}
+
+.navbar-brand {
+    height: 50px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+@media (min-width: 995px) {
+    .navbar-brand {
+        margin-left: 3rem; /* Layar besar */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        margin-left: 0; /* Layar kecil */
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Navbar Links */
+.nav-link {
+    color: #355AA9;
+    font-weight: 350;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #355AA9;
+}
+
+/* Hover Effects for Larger Screens */
+@media (min-width: 995px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #355AA9;
+        visibility: hidden;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+/* Remove Hover Effects on Small Screens */
+@media (max-width: 994px) {
+    .nav-link::before {
+        display: none;
+    }
+}
+
+/* Dropdown */
+.dropdown-menu .dropdown-item {
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #355AA9;
+}
+
+.navbar-nav .dropdown .nav-link.dropdown-toggle {
+    color: #355AA9;
+}
+
+.navbar-nav .dropdown:hover .nav-link.dropdown-toggle,
+.navbar-nav .dropdown.show .nav-link.dropdown-toggle {
+    color: #355AA9;
+}
+
+/* Buttons */
+.login-button {
+    background-color: #355AA9;
+    color: white;
+    font-size: 14px;
+    padding: 8px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background-color: #4b78db;
+}

@@ -125,7 +125,7 @@ body, html {
     gap: 2rem;
 }
 
-.hero-1, .text-hero-1, .button-hero-1 {
+.hero-1, .text-hero-1, .a-hero-1 {
     margin-left: 3.5rem;
 }
 
@@ -190,17 +190,17 @@ body, html {
 }
 
 .btn-custom-lapor {
+    text-decoration: none;
     background-color: #355AA9;
-    color: white;
-    height: 50px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 16px;
-    padding: 0 1.5rem;
+    border: 1px;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
 }
 
 .btn-custom-lapor:hover {
     background-color: #4b78db;
-    color: white;
+    transition: ease-in-out 0.4s;
 }
 
 .second-section {
@@ -284,7 +284,7 @@ body, html {
     gap: 2rem;
 }
 
-.our-team, .text-about, .button-our-team {
+.our-team, .text-about, .a-our-team {
     margin-left: 4rem;
 }
 
@@ -308,17 +308,6 @@ body, html {
     border-radius: 10px;
 }
 
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-.card:hover {
-    transform: translateY(-10px);
-}
-
 .waves-icon {
     margin-bottom: 10rem;
 }
@@ -336,25 +325,55 @@ body, html {
     }
   }
 
-  /* Menyusun carousel agar berada di tengah */
-.carousel {
-    display: flex;
-    justify-content: center;
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
     align-items: center;
-  }
-  
-  /* Menyesuaikan ukuran tombol navigasi (arrow) */
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 50px; /* Lebar tombol yang lebih kecil */
-    height: 50px; /* Tinggi tombol */
-    font-size: 1.5rem; /* Ukuran font ikon */
-  }
-  
-  /* Menyelaraskan ikon tombol ke tengah */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    border-radius: 25px;
+    background-color: #fff;
+    
+}
+
+.card-image .card-img {
     height: 100%;
-  }
-  
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border: 4px solid #4070f4;
+}
+
+.slide-container {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.slide-content {
+    margin: 0 40px;
+}
+
+.image-content, .card-content {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+} 
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.image-content {
+    row-gap: 5px;
+}
+
