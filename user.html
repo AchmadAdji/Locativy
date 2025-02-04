@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table User - Locativy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <div id="sidebar" class="p-3">
+        <h4 class="text-center">Locativy</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="users.html" class="nav-link active"><i class="fas fa-user"></i> Users</a>
+            </li>
+            <li class="nav-item">
+                <a href="table.html" class="nav-link"><i class="fas fa-table"></i> Table</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="fas fa-cogs"></i> Settings</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-danger w-100 mt-3" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <button class="btn mb-3" id="toggleSidebar"><i class="fas fa-bars"></i></button>
+        <h2>Daftar Pengguna</h2>
+
+        <!-- Tombol Filter Status -->
+        <p>Filter Berdasarkan Status</p>
+        <div class="btn-group mb-3" role="group">
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="">Semua</button>
+            <button type="button" class="btn btn-outline-success filter-btn" data-filter="Aktif">Aktif</button>
+            <button type="button" class="btn btn-outline-danger filter-btn" data-filter="Nonaktif">Nonaktif</button>
+        </div>
+
+        <!-- Tabel User -->
+        <div class="table-responsive">
+            <table id="userTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Peran</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>john_doe</td>
+                        <td>john@example.com</td>
+                        <td>Admin</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary btn-edit" data-id="1" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger btn-delete" data-id="1" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>jane_smith</td>
+                        <td>jane@example.com</td>
+                        <td>User</td>
+                        <td><span class="badge bg-danger">Nonaktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary btn-edit" data-id="2" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger btn-delete" data-id="2" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Edit User -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Edit Pengguna</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" id="editUsername">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Peran</label>
+                            <select class="form-control" id="editRole">
+                                <option>Admin</option>
+                                <option>User</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select class="form-control" id="editStatus">
+                                <option>Aktif</option>
+                                <option>Nonaktif</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hapus User -->
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteUserModalLabel">Hapus Pengguna</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapus pengguna ini?</p>
+                    <button type="button" class="btn btn-danger">Hapus</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            const table = $('#userTable').DataTable();
+
+            $('.filter-btn').on('click', function() {
+                const filterValue = $(this).data('filter');
+                table.column(4).search(filterValue).draw();
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script> -->
+    <script src="assets/js/user.js"></script>
+</body>
+</html>

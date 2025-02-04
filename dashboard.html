@@ -13,29 +13,96 @@
         <h4 class="text-center">Locativy</h4>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="dashboard.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-user"></i> Users</a>
+                <a href="user.html" class="nav-link"><i class="fas fa-user"></i> Users</a>
             </li>
             <li class="nav-item">
-                <a href="table.html" class="nav-link"><i class="fas fa-table"></i>Table</a>
+                <a href="table.html" class="nav-link"><i class="fas fa-table"></i> Table</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link"><i class="fas fa-cogs"></i> Settings</a>
             </li>
+            
+            <li class="nav-item">
+                <button class="btn btn-danger w-100 mt-3" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </li>
+                
         </ul>
+        
     </div>
-    <div id="content">
+    <div id="content" class="p-4">
         <button class="btn mb-3" id="toggleSidebar"><i class="fas fa-bars"></i></button>
         <h2>Dashboard</h2>
         <p>Selamat datang di Admin Dashboard Locativy!</p>
+
+        <!-- Statistik Dashboard -->
+       <!-- Statistik Dashboard -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-center p-3">
+            <h5 class="card-header"><i class="fas fa-users"></i> Banyaknya User</h5>
+            <h2 id="userCount">10</h2>
+        </div>
     </div>
-    <!-- <script>
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('hide');
-        });
-    </script> -->
+    <div class="col-md-4">
+        <div class="card text-center p-3">
+            <h5 class="card-header"><i class="fas fa-exclamation-circle"></i> Laporan Barang Hilang</h5>
+            <h2 id="lostReports">5</h2>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center p-3">
+            <h5 class="card-header"><i class="fas fa-table"></i> Laporan Menemukan Barang</h5>
+            <h2 id="foundReports">3</h2>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Tabel Laporan Terbaru -->
+        <div class="mt-4">
+            <h4>Laporan Terbaru</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jenis Laporan</th>
+                        <th>Pelapor</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Barang Hilang</td>
+                        <td>Rizky</td>
+                        <td>Diproses</td>
+                        <td><button class="btn btn-success">Detail</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Menemukan Barang</td>
+                        <td>Ani</td>
+                        <td>Selesai</td>
+                        <td><button class="btn btn-success">Detail</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Barang Hilang</td>
+                        <td>Budi</td>
+                        <td>Menunggu Konfirmasi</td>
+                        <td><button class="btn btn-success">Detail</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <script src="assets/js/sidebar.js"></script>
 </body>
 </html>

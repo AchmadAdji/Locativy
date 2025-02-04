@@ -13,6 +13,7 @@ body {
     overflow: hidden;
     display: flex;
 }
+
 .left-panel, .right-panel {
     padding: 40px;
     flex: 1;
@@ -21,7 +22,7 @@ body {
     background: white;
 }
 .right-panel {
-    background: #0066ff;
+    background: #355aa9;
     color: white;
     display: flex;
     align-items: center;

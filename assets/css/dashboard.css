@@ -48,3 +48,23 @@
 #sidebar.hide + #content {
     margin-left: 0;
 }
+.card {
+    background-color: #f8f9fa;
+    border-left: 5px solid #355aa9;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+    background-color: #355aa9;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.card h2 {
+    color: #355aa9;
+    font-weight: bold;
+    margin-top: 10px;
+}
