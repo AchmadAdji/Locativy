@@ -8,6 +8,8 @@ body, html {
     margin: 0;
     padding: 0;
     background-color: white;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 /* Navbar */
@@ -116,7 +118,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 6rem;
+    margin-top: 8rem;
     padding: 2rem;
     margin-left: auto;
     margin-right: auto;
@@ -143,13 +145,26 @@ body, html {
     display: flex;
     justify-content: flex-end;
     margin-left: 0; 
-    padding-right: 1rem; /* Tambahkan spasi kanan */
+    padding-right: 1rem; 
+}
+
+.illustration-1 {
+    width: 100%;
+    position: relative;
+    margin-bottom: 5rem;
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width: 1000px;
     height: auto;
     object-fit: contain;
+}
+
+.img-icon-border {
+    max-width: 1350px;
+    height: 10px;
+    object-fit: contain;
+    margin-bottom: 5rem;
 }
 
 @media (max-width: 768px) {
@@ -218,6 +233,7 @@ body, html {
     margin-top: 8rem;
     width: 100%;
     height: 500px;
+    
 }
 
 .btn-getstarted {
@@ -302,3 +318,43 @@ body, html {
 .card:hover {
     transform: translateY(-10px);
 }
+
+.waves-icon {
+    margin-bottom: 10rem;
+}
+
+.collapse {
+    position: relative;
+    margin-top: 1rem;
+    z-index: 10;
+  }
+
+
+  @media (max-width: 767px) {
+    .section-benefit {
+      display: block;
+    }
+  }
+
+  /* Menyusun carousel agar berada di tengah */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Menyesuaikan ukuran tombol navigasi (arrow) */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px; /* Lebar tombol yang lebih kecil */
+    height: 50px; /* Tinggi tombol */
+    font-size: 1.5rem; /* Ukuran font ikon */
+  }
+  
+  /* Menyelaraskan ikon tombol ke tengah */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 100%;
+    height: 100%;
+  }
+  
