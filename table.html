@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Barang Hilang - Locativy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+</head>
+<body>
+
+    <!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Laporan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="editUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="editUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editJenisBarang" class="form-label">Jenis Barang</label>
+                        <input type="text" class="form-control" id="editJenisBarang">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editJenisLaporan" class="form-label">Jenis Laporan</label>
+                        <select class="form-control" id="editJenisLaporan">
+                            <option value="Laporan Kehilangan Barang">Kehilangan</option>
+                            <option value="Laporan Menemukan Barang">Penemuan</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editTempat" class="form-label">Tempat Barang Disimpan</label>
+                        <input type="text" class="form-control" id="editTempat">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editGambar" class="form-label">Gambar</label>
+                        <input type="file" class="form-control" id="editGambar">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Hapus -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Apakah kamu yakin ingin menghapus laporan ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="sidebar" class="p-3">
+        <h4 class="text-center">Locativy</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a href="dashboard.html" class="nav-link"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="user.html" class="nav-link"><i class="fas fa-user"></i> Users</a>
+            </li>
+            <li class="nav-item">
+                <a href="table.html" class="nav-link active"><i class="fas fa-table"></i> Table</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="fas fa-cogs"></i> Settings</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn btn-danger w-100 mt-3" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <button class="btn mb-3" id="toggleSidebar"><i class="fas fa-bars"></i></button>
+        <h2>Table Barang Hilang</h2>
+        
+       
+
+        <!-- Tombol Filter -->
+         <p>Filter Berdasarkan Jenis Laporan</p>
+        <div class="btn-group mb-3" role="group">
+            <button type="button" class="btn btn-outline-primary filter-btn" data-filter="">Semua</button>
+            <button type="button" class="btn btn-outline-danger filter-btn" data-filter="Laporan Kehilangan Barang">Kehilangan</button>
+            <button type="button" class="btn btn-outline-success filter-btn" data-filter="Laporan Menemukan Barang">Penemuan</button>
+        </div>
+
+        <!-- Tabel Bootstrap dengan DataTables -->
+        <div class="table-responsive">
+            <table id="barangHilangTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Jenis Barang</th>
+                        <th>Jenis Laporan</th>
+                        <th>Tempat Barang Disimpan</th>
+                        <th>Gambar</th>
+                        <th>Waktu Pelaporan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi oleh JavaScript atau backend -->
+                    <tr>
+                        <td>1</td>
+                        <td>john_doe</td>
+                        <td>Dompet</td>
+                        <td>Laporan Kehilangan Barang</td>
+                        <td>Pos Satpam Gedung A</td>
+                        <td><img src="https://via.placeholder.com/50" alt="Gambar Barang" class="img-thumbnail"></td>
+                        <td>2023-10-01 14:30:00</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary btn-edit" data-id="1" data-bs-toggle="modal" data-bs-target="#editModal">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger btn-delete" data-id="1" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>jane_smith</td>
+                        <td>Kunci Mobil</td>
+                        <td>Laporan Menemukan Barang</td>
+                        <td>Pos Satpam Gedung B</td>
+                        <td><img src="https://via.placeholder.com/50" alt="Gambar Barang" class="img-thumbnail"></td>
+                        <td>2023-10-02 09:15:00</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary btn-edit" data-id="2" data-bs-toggle="modal" data-bs-target="#editModal">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger btn-delete" data-id="2" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                <i class="fas fa-trash"></i> Hapus
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Tambahkan lebih banyak data di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Edit dan Hapus (tetap sama seperti sebelumnya) -->
+    <!-- ... -->
+
+    <!-- DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
+        $(document).ready(function() {
+            // Inisialisasi DataTables
+            const table = $('#barangHilangTable').DataTable({
+                pageLength: 15, // Menampilkan 15 data per halaman
+                lengthMenu: [15, 30, 50, 100], // Opsi jumlah data per halaman
+                ordering: true, // Mengaktifkan pengurutan
+                searching: true, // Mengaktifkan fitur pencarian
+                language: {
+                    paginate: {
+                        previous: '<i class="fas fa-chevron-left"></i>', // Tombol previous
+                        next: '<i class="fas fa-chevron-right"></i>' // Tombol next
+                    },
+                    search: 'Cari:', // Label pencarian
+                    lengthMenu: 'Tampilkan _MENU_ data per halaman', // Label length menu
+                    info: 'Menampilkan _START_ sampai _END_ dari _TOTAL_ data', // Info tabel
+                    emptyTable: 'Tidak ada data tersedia', // Pesan jika tabel kosong
+                },
+                columnDefs: [
+                    {
+                        targets: 3, // Kolom "Jenis Laporan" (indeks 3)
+                        render: function(data, type, row) {
+                            // Tambahkan badge warna berbeda untuk tiap jenis laporan
+                            const badgeClass = data === 'Laporan Kehilangan Barang' 
+                                ? 'bg-danger' 
+                                : 'bg-success';
+                            return `<span class="badge ${badgeClass}">${data}</span>`;
+                        }
+                    }
+                ]
+            });
+
+            // Filter dropdown handler
+            $('#filterJenis').on('change', function() {
+                const filterValue = $(this).val();
+                table.column(3) // Kolom index 3 (jenis laporan)
+                     .search(filterValue)
+                     .draw();
+            });
+
+            // Filter tombol handler
+            $('.filter-btn').on('click', function() {
+                const filterValue = $(this).data('filter');
+                table.column(3).search(filterValue).draw();
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script> -->
+    <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/table.js"></script>
+</body>
+</html>
