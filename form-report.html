@@ -9,7 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/item-lost.css">
+    <link rel="stylesheet" href="assets/css/form-report.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="#">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -42,8 +43,8 @@
                   Items
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Lost item</a></li>
-                  <li><a class="dropdown-item" href="#">Foud items</a></li>
+                  <li><a class="dropdown-item" href="listpage.html">Lost item</a></li>
+                  <li><a class="dropdown-item" href="#">Found items</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -58,7 +59,7 @@
       </div>
     </nav>
 
-    <section class="content" style="margin-top: 1rem;">
+    <section class="content" style="margin-top: 6rem;">
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -69,6 +70,7 @@
                 <h4 class="card-title">Form Report Item</h4>
               </div>
               <!-- /.card-header -->
+
               <!-- form start -->
               <form method="post">
                 <div class="card-body">
@@ -95,11 +97,29 @@
                     <label for="exampleInputFile" style="font-weight: 500;">Upload File</label>
                     <input type="file" class="form-control-file" id="exampleInputFile">
                   </div><br>
-                  <button type="submit" class="btn btn-primary">Submit</button>                  
+                  <button type="submit" class="btn btn-primary" style="float: right; margin-bottom: 1rem;">Submit</button>                  
                 </div>
-                <!-- /.card-body -->
               </form>
-            </div>
+                <!-- /.card-body -->
+            </section>
+
+            <section class="footer">
+              <div class="footer-content">
+                  <h4>Get started</h4>
+              </div>
+              <div class="footer-content">
+                  <h4>Get help</h4>
+              </div>
+              <div class="footer-content">
+                  <img src="assets/image/Logo Locativy-polos.png">
+              </div>
+              <div class="footer-content">
+                  <h4>About us</h4>
+              </div>
+              <div class="footer-content">
+                  <h4>Partnership</h4>
+              </div>
+          </section>
     
 </body>
 </html>
