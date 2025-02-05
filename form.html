@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locativy - Item Data Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Locativy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Chat</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Items</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Lost Items</a></li>
+                            <li><a class="dropdown-item" href="#">Found Items</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                </ul>
+                <button class="btn btn-primary ms-3">Cancel</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <div class="container my-5">
+        <h3 class="fw-bold">Item data found</h3>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control bg-light" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jenis Barang</label>
+                <input type="text" class="form-control bg-light" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jenis Laporan</label>
+                <input type="text" class="form-control bg-light" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Barang Disimpan</label>
+                <input type="text" class="form-control bg-light" >
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Upload Gambar</label>
+                <input type="text" class="form-control bg-light" >
+            </div>
+            <button type="submit" class="btn btn-primary" >Kirim</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between">
+            <span>Get started</span>
+            <span>Get help</span>
+            <span class="fw-bold">Locativy</span>
+            <span>About us</span>
+            <span>Partnership</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

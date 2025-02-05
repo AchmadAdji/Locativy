@@ -377,3 +377,100 @@ body, html {
     row-gap: 5px;
 }
 
+/* Call to Action (CTA) Section */
+.cta-container {
+    background-color: #1D5DA8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: -50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: relative;
+}
+
+.cta-button {
+    padding: 8px 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #1D5DA8;
+}
+
+/* Footer */
+.footer {
+    background-color: #85A3DA;
+    padding: 60px 20px 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.footer-column h3 {
+    color: #355aa9;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #355aa9;
+    font-size: 14px;
+    transition: 0.3s;
+    
+}
+
+.footer-column ul li a:hover {
+    color: #1D5DA8;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-icons i {
+    width: 24px;
+    font-size: 40px;
+    margin: 0 10px;
+    margin-bottom: 0.8rem;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-top: 10px;
+}
+
+/* #our-team {
+    scroll-margin-top: 80px;
+} */
