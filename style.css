@@ -392,6 +392,16 @@ body, html {
     border: 4px solid #4070f4;
 }
 
+
+
+
+/* carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+
 /* Call to Action (CTA) Section */
 .cta-container {
     background-color: #1D5DA8;
