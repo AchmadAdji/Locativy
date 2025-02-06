@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Desktop Clone</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* Global Styles */
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 350px;
+            height: 100vh;
+            background: #ECECEC;
+            color: black;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            transition: 0.3s;
+        }
+
+        .sidebar .chat {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid white;
+        }
+
+        .sidebar .chat img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .sidebar .chat .actions {
+            margin-left: auto;
+        }
+
+        .sidebar .chat-nav .actions {
+            margin-left: auto;
+        }
+
+        .sidebar .chat .actions i {
+            font-size: 20px;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .sidebar .search {
+            padding: 10px;
+            border-bottom: 1px solid white;
+        }
+
+        .sidebar .chats {
+            height: calc(100vh - 110px);
+            overflow-y: auto;
+        }
+
+        .sidebar .chat {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #444444;
+            transition: background 0.3s;
+        }
+
+        .chat-nav {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #444444;
+            transition: background 0.3s;
+        }
+
+        .sidebar .chat:hover {
+            background: #bebebe;
+        }
+
+        .sidebar .chat img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .sidebar .chat .chat-info {
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        /* Chat Area */
+        .chat-area {
+            margin-left: 350px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: rgb(221, 219, 219);
+        }
+
+        .chat-area .navbar {
+            background: #355AA9;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .chat-area .navbar .icons i {
+            font-size: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .chat-area .messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-area .messages .message {
+            max-width: 60%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-area .messages .sent {
+            background: #203665;
+            align-self: flex-end;
+            color: white;
+        }
+
+        .chat-area .messages .received {
+            background: black;
+            align-self: flex-start;
+        }
+
+        /* Chat Input */
+        .chat-area .chat-input {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #6D88C0;
+        }
+
+        .chat-area .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            margin: 0 10px;
+        }
+
+        .chat-area .chat-input i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="chat-nav">
+            <h3 class="ms-3">Chat</h3>
+            <div class="actions">
+                <i class="bi bi-chat-left-text"></i>
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </div>
+        
+        <div class="search">
+            <input type="text" class="form-control" placeholder="Search chats...">
+        </div>
+
+        <div class="chats">
+            <div class="chat" onclick="openChat('John Doe')">
+                <img src="https://via.placeholder.com/50" alt="User">
+                <div class="chat-info">
+                    <strong>John Doe</strong>
+                    <p>Hey, how are you?</p>
+                </div>
+            </div>
+
+            <div class="chat" onclick="openChat('Jane Smith')">
+                <img src="https://via.placeholder.com/50" alt="User">
+                <div class="chat-info">
+                    <strong>Jane Smith</strong>
+                    <p>Let's meet tomorrow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+        <div class="navbar">
+            <strong id="chat-name">Select a chat</strong>
+            <div class="icons">
+                <i class="bi bi-search"></i>
+                <i class="bi bi-three-dots-vertical"></i>
+            </div>
+        </div>
+
+        <div class="messages" id="messages">
+            <p>Select a conversation to start messaging.</p>
+        </div>
+
+        <div class="chat-input">
+            <i class="bi bi-emoji-smile"></i>
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <i class="bi bi-send-fill" onclick="sendMessage()"></i>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function openChat(name) {
+            document.getElementById("chat-name").innerText = name;
+            document.getElementById("messages").innerHTML = `<p>You're now chatting with <strong>${name}</strong></p>`;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            const messageText = input.value.trim();
+
+            if (messageText === "") return;
+
+            const messageBox = document.getElementById("messages");
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("message", "sent");
+            newMessage.innerText = messageText;
+            
+            messageBox.appendChild(newMessage);
+            input.value = "";
+            messageBox.scrollTop = messageBox.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>
