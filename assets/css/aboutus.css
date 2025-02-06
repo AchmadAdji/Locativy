@@ -1,0 +1,54 @@
+
+section{
+    padding: 80px 13% 70px;
+}
+
+.login-button {
+    background-color: #355AA9;
+    color: white;
+    font-size: 14px;
+    padding: 8px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    background-color: #4b78db;
+}
+
+.section{
+    padding: 80px 13% 70px;
+}
+
+.container{
+    
+   font-family: 'Poppins';
+}
+
+.col h2{
+    color: #355AA9;
+    font-weight: 600;
+    margin-bottom: 6rem;
+}
+
+.centered-text h2{
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+    .footer-content {
+        margin: 10px 0; /* Mengatur margin untuk tampilan mobile */
+    }
+}
+    .row {
+        margin-top: 5rem;
+    }
+
+    .navbar-brand {
+        max-width: 90%; /* Lebar mengikuti layar */
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 10px 35px;
+    }
