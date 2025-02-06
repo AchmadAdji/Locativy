@@ -182,3 +182,12 @@ section{
         font-size: 14px;
         padding: 10px 35px;
     }
+
+.card-img-top {
+    width: 100%; /* Memastikan gambar memenuhi lebar kartu */
+    height: 250px; /* Mengatur tinggi gambar */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+}
+.card-deck {
+    justify-content: center; /* Menempatkan card-deck di tengah */
+}

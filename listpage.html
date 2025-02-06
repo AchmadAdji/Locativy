@@ -179,8 +179,8 @@
             if (rowHTML) container.innerHTML += `<div class='row'>${rowHTML}</div>`;
 
             // Update pagination visibility
-            document.getElementById('prev-page').style.visibility = currentPage === 1 ? 'disable' : 'visible';
-            document.getElementById('next-page').style.visibility = currentPage === Math.ceil(items.length / 8) ? 'disable' : 'visible';
+            document.getElementById('prev-page').style.visibility = currentPage === 1 ? 'disabled' : 'visible';
+            document.getElementById('next-page').style.visibility = currentPage === Math.ceil(items.length / 8) ? 'disableds' : 'visible';
         }
 
         changePage(1); // Initial page load
