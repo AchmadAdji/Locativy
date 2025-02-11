@@ -92,7 +92,7 @@ if (isset($_POST['edit'])) {
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM reports ORDER BY created_at DESC";
+                $sql = "SELECT * FROM barang ORDER BY created_at DESC";
                 $result = $conn->query($sql);
                 $no = 1;
 

@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke database
-$conn = new mysqli('localhost', 'root', '', 'locatify');
+$conn = new mysqli('localhost', 'root', '', 'auth');
 
 // Cek koneksi
 if ($conn->connect_error) {
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Enkripsi password
-
+    
     // Validasi input
     if (!empty($username) && !empty($email) && !empty($_POST['password'])) {
         // Periksa apakah username atau email sudah digunakan
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="confirmPassword" class="form-label">Confirm Password</label>
                     <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Register</button>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
             </form>
             
             <p class="mt-3">Already have an account? <a href="login.php">Log in</a></p>

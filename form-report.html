@@ -71,37 +71,38 @@
               </div>
               <!-- /.card-header -->
 
-              <!-- form start -->
-              <form method="post">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInput" style="font-weight: 500;">Username</label>
-                    <input type="text" class="form-control" id="exampleInput1" placeholder="Enter Your Username">
-                  </div><br>
+             <!-- form start -->
+<form action="process_report.php" method="post" enctype="multipart/form-data">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="username" style="font-weight: 500;">Username</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Username" required>
+    </div><br>
 
-                  <div class="form-group">
-                    <label for="exampleInput" style="font-weight: 500;">Item</label>
-                    <input type="text" class="form-control" id="exampleInput2" placeholder="Enter Name Of Item">
-                  </div><br>
-                  
-                  <div class="form-group">
-                    <label for="exampleSelect" style="font-weight: 500;">Type Report</label>
-                    <select class="form-control" id="exampleSelect">
-                      <option value="">-- Choose type report --</option>
-                      <option value="item1">Found Item</option>
-                      <option value="item2">Lost Item</option>
-                    </select>
-                  </div><br>
-                  
-                  <div class="form-group">
-                    <label for="exampleInputFile" style="font-weight: 500;">Upload File</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile">
-                  </div><br>
-                  <button type="submit" class="btn btn-primary" style="float: right; margin-bottom: 1rem;">Submit</button>                  
-                </div>
-              </form>
-                <!-- /.card-body -->
-            </section>
+    <div class="form-group">
+      <label for="item" style="font-weight: 500;">Item</label>
+      <input type="text" class="form-control" id="item" name="item" placeholder="Enter Name Of Item" required>
+    </div><br>
+    
+    <div class="form-group">
+      <label for="type_report" style="font-weight: 500;">Type Report</label>
+      <select class="form-control" id="type_report" name="type_report" required>
+        <option value="">-- Choose type report --</option>
+        <option value="Found Item">Found Item</option>
+        <option value="Lost Item">Lost Item</option>
+      </select>
+    </div><br>
+    
+    <div class="form-group">
+      <label for="file" style="font-weight: 500;">Upload File</label>
+      <input type="file" class="form-control-file" id="file" name="file" required>
+    </div><br>
+
+    <button type="submit" class="btn btn-primary" style="float: right; margin-bottom: 1rem;">Submit</button>
+  </div>
+</form>
+<!-- /.card-body -->
+
 
            <!-- Footer Section -->
 <footer class="footer">

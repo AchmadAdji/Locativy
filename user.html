@@ -59,36 +59,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>john_doe</td>
-                        <td>john@example.com</td>
-                        <td>Admin</td>
-                        <td><span class="badge bg-success">Aktif</span></td>
-                        <td>
-                            <button class="btn btn-sm btn-primary btn-edit" data-id="1" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                            <button class="btn btn-sm btn-danger btn-delete" data-id="1" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                                <i class="fas fa-trash"></i> Hapus
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>jane_smith</td>
-                        <td>jane@example.com</td>
-                        <td>User</td>
-                        <td><span class="badge bg-danger">Nonaktif</span></td>
-                        <td>
-                            <button class="btn btn-sm btn-primary btn-edit" data-id="2" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                            <button class="btn btn-sm btn-danger btn-delete" data-id="2" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                                <i class="fas fa-trash"></i> Hapus
-                            </button>
-                        </td>
-                    </tr>
+                    <?php
+                    include 'config.php';
+                    $sql = "SELECT * FROM users";
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>{$row['id']}</td>
+                                <td>{$row['username']}</td>
+                                <td>{$row['email']}</td>
+                                <td>{$row['role']}</td>
+                                <td><span class='badge bg-" . ($row['status'] == 'Aktif' ? 'success' : 'danger') . "'>{$row['status']}</span></td>
+                                <td>
+                                    <button class='btn btn-sm btn-primary btn-edit' data-id='{$row['id']}' data-bs-toggle='modal' data-bs-target='#editUserModal'>
+                                        <i class='fas fa-edit'></i> Edit
+                                    </button>
+                                    <button class='btn btn-sm btn-danger btn-delete' data-id='{$row['id']}' data-bs-toggle='modal' data-bs-target='#deleteUserModal'>
+                                        <i class='fas fa-trash'></i> Hapus
+                                    </button>
+                                </td>
+                              </tr>";
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

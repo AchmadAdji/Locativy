@@ -32,11 +32,27 @@ section{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     margin-bottom: 2rem;
+    accent-color: #ffff;
 }
 .card:hover {
     transform: translateY(-10px);
     background: #0f41a9;
 }
+
+.container .products-container .items-container{
+    text-align: center;
+    padding:3rem 2rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    outline: .1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+ }
+ 
+ .container .products-container .items-container:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+ }
 
 .card-body h3{
     color: #fff;
@@ -92,6 +108,106 @@ section{
     z-index: 10;
     position: relative;
 }
+
+/* preview */
+.report-preview{
+    position: fixed;
+    top:0; left:0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .report-preview .preview{
+    display: none;
+    padding:2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin:2rem;
+    width: 40rem;
+ }
+ 
+ .report-preview .preview.active{
+    display: inline-block;
+ }
+ 
+ .report-preview .preview img{
+    height: 30rem;
+ }
+ 
+ .report-preview .preview .fa-times{
+    position: absolute;
+    top:1rem; right:1.5rem;
+    cursor: pointer;
+    color:#444;
+    font-size: 4rem;
+ }
+ 
+ .report-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+ }
+ 
+ .report-preview .preview h3{
+    color:#444;
+    padding:.5rem 0;
+    font-size: 2.5rem;
+ }
+ 
+ .report-preview .preview .stars i{
+    color:#27ae60;
+ }
+ 
+ .report-preview .preview .stars span{
+    color:#999;
+ }
+ 
+ .report-preview .preview p{
+    line-height: 1.5;
+    padding:1rem 0;
+    font-size: 1.6rem;
+    color:#777;
+ }
+ 
+ .report-preview .preview .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:#27ae60;
+ }
+ 
+ .report-preview .preview .buttons{
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+ }
+ 
+ .report-preview .preview .buttons a{
+    flex:1 1 16rem;
+    padding:1rem;
+    font-size: 1.8rem;
+    color:#444;
+    border:.1rem solid #444;
+ }
+ 
+ .report-preview .preview .buttons a.cart{
+    background: #444;
+    color:#fff;
+ }
+ 
+ .report-preview .preview .buttons a.cart:hover{
+    background: #111;
+ }
+ 
+ .report-preview .preview .buttons a.buy:hover{
+    background: #444;
+    color:#fff;
+ }
+ 
+
 
 /* Footer */
 .footer {

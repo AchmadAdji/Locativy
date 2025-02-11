@@ -41,7 +41,7 @@
                   Items
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="listpage.html">Lost item</a></li>
+                  <li><a class="dropdown-item" href="listpage.php">Lost item</a></li>
                   <li><a class="dropdown-item" href="#">Foud items</a></li>
                 </ul>
               </li>

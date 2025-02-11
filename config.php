@@ -1,12 +1,14 @@
 <?php
-$host = "localhost";
-$user = "root"; // Sesuaikan dengan username database Anda
-$pass = ""; // Sesuaikan dengan password database Anda
-$dbname = "locatify"; // Nama database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "auth";
 
-$conn = new mysqli($host, $user, $pass, $dbname);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>

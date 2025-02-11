@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Koneksi ke database
-$conn = new mysqli('localhost', 'root', '', 'locatify');
+$conn = new mysqli('localhost', 'root', '', 'Auth');
 
 // Cek koneksi
 if ($conn->connect_error) {
@@ -39,14 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
-
+                
                 // Jika "Remember Me" dicentang, simpan cookie
                 if ($remember_me) {
                     setcookie("remember_me", $username, time() + (86400 * 30), "/"); // Berlaku 30 hari
                 }
 
                 // Redirect ke halaman utama setelah login sukses
-                header("Location: index.php");
+                header("Location: index.html");
                 exit;
             } else {
                 $message = "Password salah!";
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $message = "Harap isi semua data!";
     }
-    
+
 }
 ?>
 
