@@ -72,12 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="form-report.html">Message</a></li>
+                        <li class="nav-item"><a class="nav-link" href="message.html">Message</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="listpage.php">Lost item</a></li>
-                                <li><a class="dropdown-item" href="#">Found items</a></li>
+                                <li><a class="dropdown-item" href="lost-item.php">Lost item</a></li>
+                                <li><a class="dropdown-item" href="found-item.php">Found items</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
@@ -102,13 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </div>
 
 
-    <div class="container" style="margin: 2rem 2rem 2rem 2rem; padding-right: 4rem;">
+    <div class="container" style="margin: 2rem 2rem 2rem 2rem; padding-right: 4rem; background-color:transparent">
         <?php if ($message) echo $message; ?>
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="username" class="form-label"><b>Username</b></label>
                 <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
-                
             </div>
             <div class="mb-3">
                 <label for="item" class="form-label"><b>Item</b></label>
@@ -141,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <h3>Get started</h3>
           <ul>
               <li><a href="#">Sign up</a></li>
-              <li><a href="#">Sign in</a></li>
+              <li><a href="#">Sign in</a></li>  
               <li><a href="#">Create account</a></li>
           </ul>
       </div>
@@ -172,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="footer-bottom">
       <div class="social-icons">
         <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
-          <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
+          <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>xml_error_string
           <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
       </div>
       <div class="footer-logo">

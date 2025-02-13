@@ -15,8 +15,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- JavaScript -->
+    <script>
+        // Simulasi status login (true jika login, false jika tidak)
+        let isLoggedIn = false; // Ganti dengan pengecekan dari backend
+
+        function checkAuth() {
+            if (!isLoggedIn) {
+                window.location.href = '#'; // Arahkan ke halaman login jika belum login
+            }
+        }
+
+        function logout() {
+            if (confirm('Anda yakin ingin log out?')) {
+                isLoggedIn = false;
+                alert('Anda telah keluar');
+                window.location.href = 'login.php'; // Arahkan ke halaman login setelah logout
+            }
+        }
+
+        function showMessage() {
+            alert('Fitur ini hanya tersedia untuk pengguna yang sudah login');
+        }
+    </script>
 </head>
-<body>
+
+<body onload="checkAuth()">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
@@ -31,26 +55,26 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link active" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Message</a>
+                <a class="nav-link" href="#" onclick="showMessage()">Message</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                   Items
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="listpage.php">Lost item</a></li>
-                  <li><a class="dropdown-item" href="#">Foud items</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="showMessage()">Lost item</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="showMessage()">Found items</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="#" onclick="showmessage()">About Us</a>
               </li>
             </ul>
             <div class="button">
-              <a class="login-button" type="submit">Login</a>
+              <a class="login-button" type="submit" href="login.php">Lapor!</a>
             </div>
           </div>
         </div>
@@ -58,27 +82,26 @@
     </nav>
     
     <!-- Hero Section -->
-    <div class="hero-section d-flex align-items-center fixed">
+    <div class="hero-section">
+      <!-- Konten Teks -->
       <div class="content">
-        <h2 class="hero-1 fw-bold mb-4">We Create <span style="color: #355AA9;">Solutions</span> for<p>Lost and Found</p></h2>
-        <p class="text-hero-1">At Locativy, we are committed to providing the<br>best solution for handling lost items.</p>
-        <div class="a-hero-1 mt-4">
-          <a href="form-report.html" class="btn-custom-lapor px-4">Report Now!</a>
+        <h3 class="hero-1 fw-bold mb-4">
+          We create <span>Solutions</span> for <br>Lost and Found
+        </h3>
+        <p class="text-hero-1">
+          At Locativy, we are committed to providing the best <br> solution for handling lost items.
+        </p>
+        <div class="button">
+          <a class="button-custom" type="submit" href="report.php">Report now!</a>
         </div>
       </div>
-      <div class="illustration">
-        <img src="assets/image/undraw_web-search_9qqc 1.png" class="img-fluid" alt="Illustration" style="height: 350px;">
-      </div>
-    </div>
+    
+      <!-- Gambar Latar Belakang -->
+      <img src="assets/image/icon-1.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
+    </div>    
 
-    <div class="icon-border">
-      <div class="illustration-1">
-        <img src="assets/image/icon.png" class="img-fluid-border" alt="Illustration" style="height: auto; object-fit: contain; width: 100%;">
-      </div>
-    </div>
-
-    <div class="second-section d-flex align-items-center">
-      <div class="content">
+    <div class="service-section d-flex align-items-center">
+      <div class="content-service">
         <h4 class="fw-bold mb-2">Service We <span style="color: #355AA9;">Offer</span> !</h4>
         <p class="text-muted">Here are the key services we offer:</p>
       </div>
@@ -86,7 +109,7 @@
 
   <div class="row row-cols-2 row-cols-md-5 g-4" style="justify-content: center; margin-top: 1rem; gap: 2rem;">
     <div class="col">
-      <div class="card d-flex flex-column" style="transition: transform 0.3s ease; 
+      <div class="card d-flex flex-column h-100" style="transition: transform 0.3s ease; 
       background: white;
       border-radius: 10px;
       padding: 15px;
@@ -104,7 +127,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card d-flex flex-column" style="transition: transform 0.3s ease;
+      <div class="card d-flex flex-column h-100" style="transition: transform 0.3s ease;
       background: white;
       border-radius: 10px;
       padding: 15px;
@@ -122,7 +145,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card d-flex flex-column" style="transition: transform 0.3s ease;
+      <div class="card d-flex flex-column h-100" style="transition: transform 0.3s ease;
       background: white;
       border-radius: 10px;
       padding: 15px;
@@ -140,7 +163,7 @@
       </div>
     </div>
     <div class="col">
-      <div class="card d-flex flex-column" style="transition: transform 0.3s ease;
+      <div class="card d-flex flex-column h-100" style="transition: transform 0.3s ease;
       background: white;
       border-radius: 10px;
       padding: 15px;
@@ -208,38 +231,70 @@
           </ul>
           <div class="row" style="margin-top: 2rem;">
             <div class="col d-flex align-items-center">
-                <button class="btn-getstarted me-4" style="width: 200px;">Get started</button>
-                <button class="btn-readmore" style="width: 200px;">Read More</button>
+                <button class="button-custom" style="width: 200px;" href="report.php">Get started</button>
             </div>
           </div>
       </div>
 
-      <div class="about-us-section d-flex align-items-center fixed" id="our-team">
-        <div class="content-about-us">
-          <h2 class="our-team fw-bold mb-4">Our Team</h2>
-          <p class="text-about" style="font-style: italic;">
-            The “Lost and Found” application is software designed to help <br> people track and identify lost or found items. 
-            These <br> applications are usually used to create a platform where <br>
-            people can report lost items, search for lost items, 
-            or report <br> found items. We apply this application in the school environment
-          </p>
-          <div class="a-our-team mt-4">
-            <a class="btn-custom-lapor px-4">Read more</a>
-          </div>
-        </div>
-        <div class="illustration-2">
-          <img src="assets/image/undraw_people-search.png" class="img-fluid" alt="Illustration" style="height: 350px;">
+      <!-- About Section -->
+    <div class="about-us-section">
+      <!-- Konten Teks -->
+      <div class="about-content">
+        <h4 class="about-1 fw-bold mb-4">
+          Our Team
+        </h4>
+        <p class="text-about-1" style="font-style: italic;">
+          The “Lost and Found” application is software designed to help people <br> track and identify lost or found items. 
+          These applications are usually <br> used to create a platform where people can report lost items, search <br> 
+          for lost items, or report found items. We apply this application in the <br> school environment...
+        </p>
+        <div class="a-about-1 mt-4">
+          <a href="form-report.html" class="button-custom px-4">Read More</a>
         </div>
       </div>
+      <!-- Gambar Latar Belakang -->
+      <img src="assets/image/icon-2.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
+    </div>
 
-      <div class="waves-icon">
-        <img src="assets/image/Vector.png" class="img-fluid-border" alt="Illustration" style="height: 160px; margin-bottom: 4rem;">
+    <section id="testimoni" class="testimoni pt-5 pb-5" >
+      <div class="container">
+          <h1 class="mb-5">Testimonial</h1>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel-inner text-center" style="padding: 0 11%;">
+              <div class="carousel-item active">
+                  <h3 class="mb-4">Amazing! This innovation must be very helpful for many people in finding their lost items.</h3>
+                  <img class="rounded-circle img-testimoni" src="assets/image/carousel 1.jpg" alt="First slide" style="border-radius: 90px;"><em class="ms-3">Imanuel, New York</em>
+              </div>
+
+              <div class="carousel-item">
+                  <h3 class="mb-4">Thank you! This website will make communication easier and more efficient within the school.</h3>
+                  <img class="rounded-circle img-testimoni" src="assets/image/carousel 2.jpg" alt="Second slide"><em class="ms-3">Team Gunners, England</em>
+              </div>
+
+              <div class="carousel-item">
+                  <h3 class="mb-4">Salute! This website is very innovative and very useful for us. Thank you for creating this.</h3>
+                  <img class="rounded-circle img-testimoni" src="assets/image/carousel 3.jpg" alt="Third slide"><em class="ms-3">Team Hammers, England</em>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+              
+          </div> 
+          
       </div>
+  </section>
+
         
       <!-- Call to Action Section -->
 <div class="cta-container">
   <h4>Ready to get started?</h4>
-  <a href="#" class="cta-button">Register now!</a>
 </div>
 
 <!-- Footer Section -->
@@ -264,7 +319,7 @@
       <div class="footer-column">
           <h3>About us</h3>
           <ul>
-              <li><a href="#our-team">Our Team</a></li>
+              <li><a href="#">Our Team</a></li>
           </ul>
       </div>
       <div class="footer-column">
@@ -279,7 +334,7 @@
   <!-- Social Media & Logo -->
   <div class="footer-bottom">
       <div class="social-icons">
-          <i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i>
+        <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
           <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
           <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
       </div>
@@ -289,11 +344,6 @@
   </div>
 </footer>
 
-    <script src="script.js"></script>
-<!--     
-    <footer class="text-center py-3 bg-dark text-white">
-        <p>© 2025 Locativy. All Rights Reserved.</p>
-    </footer> -->
-
+  
 </body>
 </html>

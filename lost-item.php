@@ -23,16 +23,21 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Ambil data dari tb_reports
-$sql_reports = "SELECT * FROM tb_reports";
+// Ambil data dari tb_reports dengan type_report "Lost Item"
+$sql_reports = "SELECT * FROM tb_reports WHERE type_report = 'Lost Item'";
 $result_reports = $conn->query($sql_reports);
 
 if ($result_reports->num_rows > 0) {
     while ($row = $result_reports->fetch_assoc()) {
+        $description = isset($row['description']) ? $row['description'] : '';
+        if (str_word_count($description) > 20) {
+            $words = explode(' ', $description);
+            $description = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
+        }
         $items[] = [
             'title' => $row['item'],
             'img' => $row['file_path'],
-            'description' => isset($row['description']) ? $row['description'] : '',
+            'description' => $description,
             'dataName' => $row['id']
         ];
     }
@@ -52,8 +57,17 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/listpage.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
+    <script>
+        let isLoggedIn = true; // Ganti dengan pengecekan dari backend
+
+        function checkAuth() {
+            if (!isLoggedIn) {
+                 window.location.href = 'Login.php'; // Arahkan ke halaman login jika belum login
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="checkAuth()">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
@@ -72,16 +86,17 @@ $conn->close();
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="listpage.html">Lost item</a></li>
-                                <li><a class="dropdown-item" href="#">Found items</a></li>
+                                <li><a class="dropdown-item" href="#">Lost item</a></li>
+                                <li><a class="dropdown-item" href="found-item.php">Found items</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    </ul>
+                    
                     <div class="button">
-                        <a class="login-button">Lapor!</a>
+                        <a class="login-button" type="submit" href="report.php">Lapor!</a>
                     </div>
-                </div>
+                </ul>
+                
             </div>
         </div>
     </nav>
@@ -100,13 +115,12 @@ $conn->close();
     <div class="container" style="margin-top: 5rem;">
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
-                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>">
-                    <div class="card">
+                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['description'] ?>', '<?= $item['dataName'] ?>')">
+                    <div class="card text-white">
                         <img src="<?= $item['img'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item['title'] ?></h5>
                             <p class="card-text"><?= $item['description'] ?></p>
-                            <button class="btn btn-primary" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['description'] ?>', '<?= $item['dataName'] ?>')">Details</button>
                         </div>
                     </div>
                 </div>
@@ -137,7 +151,6 @@ $conn->close();
                     <img id="modal-img" src="" class="img-fluid" alt="Item Image">
                     <h5 id="modal-title" class="mt-3"></h5>
                     <p id="modal-description"></p>
-                    <p id="modal-dataName"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -160,11 +173,10 @@ $conn->close();
             }
         }
 
-        function showDetails(title, img, description, dataName) {
+        function showDetails(title, img, description) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-img').src = img;
-            document.getElementById('modal-description').innerText = description;
-            document.getElementById('modal-dataName').innerText = "Data Name: " + dataName;
+            document.getElementById('modal-description').innerText = description;   
             var myModal = new bootstrap.Modal(document.getElementById('detailsModal'));
             myModal.show();
         }
