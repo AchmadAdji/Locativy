@@ -74,7 +74,7 @@
               </li>
             </ul>
             <div class="button">
-              <a class="login-button" type="submit" href="login.php">Lapor!</a>
+              <a class="login-button" type="submit" href="login.php">Login</a>
             </div>
           </div>
         </div>
@@ -83,6 +83,8 @@
     
     <!-- Hero Section -->
     <div class="hero-section">
+      <!-- Gambar Latar Belakang -->
+      <img src="assets/image/icon-1.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
       <!-- Konten Teks -->
       <div class="content">
         <h3 class="hero-1 fw-bold mb-4">
@@ -92,12 +94,10 @@
           At Locativy, we are committed to providing the best <br> solution for handling lost items.
         </p>
         <div class="button">
-          <a class="button-custom" type="submit" href="report.php">Report now!</a>
+          <a class="button-custom" type="submit" onclick="showMessage()">Report now!</a>
         </div>
       </div>
     
-      <!-- Gambar Latar Belakang -->
-      <img src="assets/image/icon-1.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
     </div>    
 
     <div class="service-section d-flex align-items-center">
@@ -229,15 +229,12 @@
                     </div>
               </li>
           </ul>
-          <div class="row" style="margin-top: 2rem;">
-            <div class="col d-flex align-items-center">
-                <button class="button-custom" style="width: 200px;" href="report.php">Get started</button>
-            </div>
-          </div>
       </div>
 
       <!-- About Section -->
     <div class="about-us-section">
+      <!-- Gambar Latar Belakang -->
+      <img src="assets/image/icon-2.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
       <!-- Konten Teks -->
       <div class="about-content">
         <h4 class="about-1 fw-bold mb-4">
@@ -249,11 +246,9 @@
           for lost items, or report found items. We apply this application in the <br> school environment...
         </p>
         <div class="a-about-1 mt-4">
-          <a href="form-report.html" class="button-custom px-4">Read More</a>
+          <a href="aboutus.html" class="button-custom px-4">Read More</a>
         </div>
       </div>
-      <!-- Gambar Latar Belakang -->
-      <img src="assets/image/icon-2.svg" alt="Background" class="background-image" style="margin-bottom: 10rem;">
     </div>
 
     <section id="testimoni" class="testimoni pt-5 pb-5" >
