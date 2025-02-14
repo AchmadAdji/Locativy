@@ -6,7 +6,10 @@ $message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST["username"]);
     $item = htmlspecialchars($_POST["item"]);
-    $description = htmlspecialchars($_POST["description"]);
+    $specification = htmlspecialchars($_POST["specification"]);
+    $quantity = htmlspecialchars($_POST["quantity"]);
+    $location = htmlspecialchars($_POST["location"]);
+    $time_found = htmlspecialchars($_POST["time_found"]);
     $type_report = htmlspecialchars($_POST["type_report"]);
     $file_name = $_FILES["file"]["name"];
     $file_tmp = $_FILES["file"]["tmp_name"];
@@ -21,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Move uploaded file to the uploads directory
     if (move_uploaded_file($file_tmp, $file_path)) {
         // Insert data into the database
-        $sql = "INSERT INTO tb_reports (username, item, deskripsi, type_report, file_path) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO tb_reports (username, item, specification, quantity, location, time_found, type_report, file_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $username, $item, $description, $type_report, $file_path);
+        $stmt->bind_param("ssssssss", $username, $item, $specification, $quantity, $location, $time_found, $type_report, $file_path);
 
         if ($stmt->execute()) {
             $message = "<div class='alert alert-success'>Data successfully inserted</div>";
@@ -83,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
                     </ul>
                     <div class="button">
-                        <a class="login-button">Lapor!</a>
+                        <a class="login-button" type="submit" href="report.php">Lapor!</a>
                     </div>
                 </div>
             </div>
@@ -114,8 +117,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" class="form-control" id="item" name="item" placeholder="Enter name of item" required>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label"><b>Description</b></label>
-                <input type="text" class="form-control" id="description" name="description" placeholder="Enter the item description" required>
+                <label for="specification" class="form-label"><b>Specification</b></label>
+                <input type="text" class="form-control" id="specification" name="specification" placeholder="Enter the item specification" required>
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label"><b>Quantity</b></label>
+                <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter the quantity" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label"><b>Location</b></label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location" required>
+            </div>
+            <div class="mb-3">
+                <label for="time_found" class="form-label"><b>Time Found</b></label>
+                <input type="datetime-local" class="form-control" id="time_found" name="time_found" required>
             </div>
             <div class="mb-3">
                 <label for="type_report" class="form-label"><b>Type Report</b></label>

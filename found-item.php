@@ -38,7 +38,11 @@ if ($result_reports->num_rows > 0) {
             'title' => $row['item'],
             'img' => $row['file_path'],
             'description' => $description,
-            'dataName' => $row['id']
+            'dataName' => $row['id'],
+            'specification' => $row['specification'],
+            'quantity' => $row['quantity'],
+            'location' => $row['location'],
+            'time_found' => $row['time_found']
         ];
     }
 }
@@ -86,7 +90,7 @@ $conn->close();
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Lost item</a></li>
+                                <li><a class="dropdown-item" href="lost-item.php">Lost item</a></li>
                                 <li><a class="dropdown-item" href="found-item.php">Found items</a></li>
                             </ul>
                         </li>
@@ -115,12 +119,12 @@ $conn->close();
     <div class="container" style="margin-top: 5rem;">
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
-                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['description'] ?>', '<?= $item['dataName'] ?>')">
+                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['description'] ?>', '<?= $item['dataName'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
                     <div class="card text-white">
                         <img src="<?= $item['img'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?= $item['title'] ?></h5>
-                            <p class="card-text"><?= $item['description'] ?></p>
+                            <p class="card-text"><?= $item['specification'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -141,16 +145,26 @@ $conn->close();
 
     <!-- Modal -->
     <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="detailsModalLabel">Item Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img id="modal-img" src="" class="img-fluid" alt="Item Image">
-                    <h5 id="modal-title" class="mt-3"></h5>
-                    <p id="modal-description"></p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modal-img" src="" class="img-fluid" alt="Item Image">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 id="modal-title" class="mt-3"></h5>
+                            <p id="modal-description"></p>
+                            <p id="modal-specification"></p>
+                            <p id="modal-quantity"></p>
+                            <p id="modal-location"></p>
+                            <p id="modal-time-found"></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -173,10 +187,14 @@ $conn->close();
             }
         }
 
-        function showDetails(title, img, description) {
+        function showDetails(title, img, description, dataName, specification, quantity, location, time_found) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-img').src = img;
-            document.getElementById('modal-description').innerText = description;   
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-specification').innerText = "Specification: " + specification;
+            document.getElementById('modal-quantity').innerText = "Quantity: " + quantity;
+            document.getElementById('modal-location').innerText = "Location: " + location;
+            document.getElementById('modal-time-found').innerText = "Time Found: " + time_found;
             var myModal = new bootstrap.Modal(document.getElementById('detailsModal'));
             myModal.show();
         }
