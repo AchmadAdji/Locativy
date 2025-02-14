@@ -286,7 +286,7 @@
                   <img class="rounded-circle img-testimoni" src="assets/image/carousel 2.jpg" alt="Second slide">
                 </div>
                   <div class="card-footer text-body-secondary">
-                    5 days ago
+                    6 days ago
                   </div>
                 </div>
               </div>
