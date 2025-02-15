@@ -129,48 +129,6 @@ section{
     background-color: #355AA9; /* Light grey background on hover */
 }
 
-/* Footer */
-.footer {
-    background-color: #85A3DA;
-    padding: 60px 20px 40px 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    flex-wrap: wrap;
-}
-
-.section{
-    padding: 80px 13% 70px;
-}
-
-.footer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    gap: 3.5rem;
-    background: #355AA9;
-    position: relative;
-    padding: 20px 0;
-    top: 3rem;
-   
-}
-
-.footer-content h4{
-    padding-top: 20px;
-    padding-left: 10px;
-    color: #fff;
-    margin: 0 60px;
-    font-size: 20px;    
-}
-
-.footer-content img{
-    padding-left: 10px;
-    margin: 0 60px;
-}
 
 @media (max-width: 768px) {
     .footer-content {

@@ -61,6 +61,7 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/listpage.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <script>
         let isLoggedIn = true; // Ganti dengan pengecekan dari backend
 
@@ -199,5 +200,50 @@ $conn->close();
             myModal.show();
         }
     </script>
+  <footer class="footer">
+      <div class="footer-content" style="margin-top: 50px;">
+          <div class="footer-column">
+              <h3>Get started</h3>
+              <ul>
+                  <li><a href="#">Sign up</a></li>
+                  <li><a href="#">Sign in</a></li>
+                  <li><a href="#">Create account</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Get help</h3>
+              <ul>
+                  <li><a href="report.php">Reporting</a></li>
+                  <li><a href="lost-item.php">Lost item</a></li>
+                  <li><a href="found-item.php">Found item</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>About us</h3>
+              <ul>
+                  <li><a href="aboutus.html">Our Team</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Partnership</h3>
+              <ul>
+                  <li><a href="#">School organization</a></li>
+                  <li><a href="#">Student affairs section</a></li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Social Media & Logo -->
+      <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
+              <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
+              <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
+          </div>
+          <div class="footer-logo">
+              <img src="assets/image/Logo Locativy - Blue.png" alt="Locativy">
+          </div>
+      </div>
+    </footer>
 </body>
 </html>
