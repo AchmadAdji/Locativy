@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/#/chat/a7c4ae44-93d0-4564-88d1-1f18c77f1984">Message</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/#/chat/a7c4ae44-93d0-4564-88d1-1f18c77f1984">Chat with Ai</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
                             <ul class="dropdown-menu">
