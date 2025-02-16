@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2025 at 08:32 AM
+-- Generation Time: Feb 16, 2025 at 05:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -123,8 +123,29 @@ CREATE TABLE `tb_reports` (
   `item` varchar(100) DEFAULT NULL,
   `type_report` varchar(50) DEFAULT NULL,
   `file_path` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `specification` varchar(255) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `location` varchar(50) NOT NULL,
+  `time_found` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_reports`
+--
+
+INSERT INTO `tb_reports` (`id`, `username`, `item`, `type_report`, `file_path`, `created_at`, `specification`, `quantity`, `location`, `time_found`) VALUES
+(1, 'san', 'laptop', 'Lost Item', 'uploads/artworks-KbEjhyBBpfHTofGg-56cZ7Q-t500x500.jpg', '2025-02-11 07:44:04', '', 0, '0', '0000-00-00 00:00:00.000000'),
+(2, 'dan ', 'kepala', 'Found Item', 'uploads/artworks-KbEjhyBBpfHTofGg-56cZ7Q-t500x500.jpg', '2025-02-11 07:46:51', '', 0, '0', '0000-00-00 00:00:00.000000'),
+(3, 'dan ', 'kepala', 'Found Item', 'uploads/artworks-KbEjhyBBpfHTofGg-56cZ7Q-t500x500.jpg', '2025-02-11 07:58:40', '', 0, '0', '0000-00-00 00:00:00.000000'),
+(4, 'dhil', 'hp', 'Lost Item', 'uploads/a019b94d-f7a3-4378-b79d-c70ba2418af5.jpg', '2025-02-11 07:59:03', '', 0, '0', '0000-00-00 00:00:00.000000'),
+(6, 'dhil', 'laptop', 'Found Item', 'uploads/a019b94d-f7a3-4378-b79d-c70ba2418af5.jpg', '2025-02-11 08:31:55', 'halo ', 0, '0', '0000-00-00 00:00:00.000000'),
+(7, 'dhil', 'hp', 'Found Item', 'uploads/a019b94d-f7a3-4378-b79d-c70ba2418af5.jpg', '2025-02-11 08:32:06', '', 0, '0', '0000-00-00 00:00:00.000000'),
+(8, 'san', 'laptop', 'Found Item', 'uploads/Screenshot (12).png', '2025-02-11 08:39:58', 'halo ', 0, '0', '0000-00-00 00:00:00.000000'),
+(9, 'fil', 'hp', 'Lost Item', 'uploads/_(((((((((.jpg', '2025-02-12 13:11:48', 'warna coklat', 0, '0', '0000-00-00 00:00:00.000000'),
+(10, 'san', 'laptop', 'Found Item', 'uploads/32230127e78887ed14e792cdcf3a825b.jpg', '2025-02-14 08:51:19', 'warna hitam, wallpaper hutao, snapdragon 760', 1, 'Gedung baru, SMKN 1 Karawang', '2025-02-14 15:42:00.000000'),
+(11, 'hutaw', 'hp', 'Found Item', 'uploads/images.jpg', '2025-02-14 08:51:49', 'warna hitam, wallpaper hutao, snapdragon 760', 1, 'Gedung baru, SMKN 1 Karawang', '2025-02-14 15:51:00.000000'),
+(12, 'hutaw', 'hp', 'Found Item', 'uploads/images.jpg', '2025-02-14 08:52:33', 'warna hitam, wallpaper hutao, snapdragon 760', 1, 'Gedung baru, SMKN 1 Karawang', '2025-02-14 15:51:00.000000');
 
 -- --------------------------------------------------------
 
@@ -136,31 +157,21 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `verification_code` text NOT NULL,
+  `email_verified_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'san', 'thesarkun@gmail.com', '$2y$10$UXizlgfXBJOgkVLQGgzivuBgL/3AC5QnCod62cYogPpZesS.uqYuu'),
-(2, 'owner', 'raffiihsan01@gmail.com', '698d51a19d8a121ce581499d7b701668'),
-(3, 'dhil', 'mdzularsyilaziz@gmail.com', '$2y$10$f2ynNMF5XIwi2hPFuksrreyLNCIC0psSygp99A2zGzyljnwfOS6/G'),
-(4, 'des', 'mulyone@gmail.com', '$2y$10$qk72D7PbYXldZ86r4R5y/eHRx2j/BcMcd5VOyc07FavlJC2AFxs1C');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `descriptions`
---
-
-CREATE TABLE `descriptions` (
-  `id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `verification_code`, `email_verified_at`) VALUES
+(1, 'san', 'thesarkun@gmail.com', '$2y$10$UXizlgfXBJOgkVLQGgzivuBgL/3AC5QnCod62cYogPpZesS.uqYuu', '', NULL),
+(2, 'owner', 'raffiihsan01@gmail.com', '698d51a19d8a121ce581499d7b701668', '', NULL),
+(3, 'dhil', 'mdzularsyilaziz@gmail.com', '$2y$10$f2ynNMF5XIwi2hPFuksrreyLNCIC0psSygp99A2zGzyljnwfOS6/G', '', NULL),
+(4, 'des', 'mulyone@gmail.com', '$2y$10$qk72D7PbYXldZ86r4R5y/eHRx2j/BcMcd5VOyc07FavlJC2AFxs1C', '', NULL),
+(5, 'fil', 'fr@gmail.com', '$2y$10$C9z/sUE7sWxk1OiCtIcBcu/kaU00olnJn6Zef70Aq39fTlaUP0i.S', '', NULL);
 
 --
 -- Indexes for dumped tables
@@ -206,13 +217,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `descriptions`
---
-ALTER TABLE `descriptions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `item_id` (`item_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -244,19 +248,13 @@ ALTER TABLE `laporan`
 -- AUTO_INCREMENT for table `tb_reports`
 --
 ALTER TABLE `tb_reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `descriptions`
---
-ALTER TABLE `descriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -274,12 +272,6 @@ ALTER TABLE `chats`
 ALTER TABLE `friends`
   ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`user1_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`user2_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `descriptions`
---
-ALTER TABLE `descriptions`
-  ADD CONSTRAINT `descriptions_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
