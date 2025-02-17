@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="footer-bottom">
       <div class="social-icons">
         <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
-          <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>xml_error_string
+          <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
           <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
       </div>
       <div class="footer-logo">
