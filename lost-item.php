@@ -120,6 +120,7 @@ $conn->close();
                 <input type="text" class="search-input" placeholder="Search" id="searchbox" onkeyup="filterItems()">
             </div>
         </nav>
+        <h2>Lost Item</h2>
     </div>
 
     <!-- List Page -->
