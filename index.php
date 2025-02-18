@@ -70,7 +70,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showmessage()">About Us</a>
+                <a class="nav-link" href="aboutus.html">About Us</a>
               </li>
             </ul>
             <div class="button">
@@ -316,51 +316,41 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-              
-          </div> 
-          
-      </div>
-  </section>
+            </div>    
+          </div>
+      </section>
 
         
       <!-- Call to Action Section -->
-<div class="cta-container">
-  <h4>Ready to get started?</h4>
-</div>
+    <div class="cta-container">
+      <h4>Ready to get started?</h4>
+    </div>
 
 <!-- Footer Section -->
 <footer class="footer">
-  <div class="footer-content" style="margin-top: 50px;">
-      <div class="footer-column">
-          <h3>Get started</h3>
-          <ul>
-              <li><a href="#">Sign up</a></li>
-              <li><a href="#">Sign in</a></li>
-              <li><a href="#">Create account</a></li>
-          </ul>
+      <div class="footer-content" style="margin-top: 50px;">
+          <div class="footer-column">
+              <h3>Get started</h3>
+              <ul>
+                <li><a href="regis.php">Create an account</a></li>
+                <li><a href="login.php">Logout</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Get help</h3>
+              <ul>
+                  <li><a href="report.php">Reporting</a></li>
+                  <li><a href="lost-item.php">Lost item</a></li>
+                  <li><a href="found-item.php">Found item</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>About us</h3>
+              <ul>
+                  <li><a href="aboutus.html">Our Team</a></li>
+              </ul>
+          </div>
       </div>
-      <div class="footer-column">
-          <h3>Get help</h3>
-          <ul>
-              <li><a href="#">Reporting</a></li>
-              <li><a href="#">Lost item</a></li>
-              <li><a href="#">Found item</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h3>About us</h3>
-          <ul>
-              <li><a href="#">Our Team</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h3>Partnership</h3>
-          <ul>
-              <li><a href="#">School organization</a></li>
-              <li><a href="#">Student affairs section</a></li>
-          </ul>
-      </div>
-  </div>
 
   <!-- Social Media & Logo -->
   <div class="footer-bottom">
@@ -374,7 +364,5 @@
       </div>
   </div>
 </footer>
-
-  
 </body>
 </html>
