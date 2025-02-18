@@ -159,7 +159,7 @@ $conn->close();
                         </div>
                         <div class="col-md-6">
                             <h5 id="modal-title" class="mt-3"></h5>
-                            <p id="modal-username"></p>
+                            <p id="modal-description"></p>
                             <p id="modal-specification"></p>
                             <p id="modal-quantity"></p>
                             <p id="modal-location"></p>
