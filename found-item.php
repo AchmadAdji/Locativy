@@ -82,7 +82,7 @@ $conn->close();
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="#">
+            <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="index.html">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -93,7 +93,7 @@ $conn->close();
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/">Chat with Ai</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/">Chat with AI</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
                             <ul class="dropdown-menu">

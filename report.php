@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-          <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="#">
+          <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="index.html">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/">Chat with Ai</a>
+                  <a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/">Chat with AI</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
