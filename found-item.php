@@ -201,8 +201,8 @@ $conn->close();
         }
     </script>
 
-<!-- footer -->
-<footer class="footer">
+  <!-- footer -->
+  <footer class="footer">
     <div class="footer-content" style="margin-top: 50px;">
         <div class="footer-column">
             <h3>Get started</h3>
@@ -227,17 +227,17 @@ $conn->close();
         </div>
     </div>
 
-      <!-- Social Media & Logo -->
-      <div class="footer-bottom">
-          <div class="social-icons">
-            <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
-              <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
-              <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
-          </div>
-          <div class="footer-logo">
-              <img src="assets/image/Logo Locativy - Blue.png" alt="Locativy">
-          </div>
-      </div>
-    </footer>
+        <!-- Social Media & Logo -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+              <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
+                <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
+                <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
+            </div>
+            <div class="footer-logo">
+                <img src="assets/image/Logo Locativy - Blue.png" alt="Locativy">
+            </div>
+        </div>
+      </footer>
 </body>
 </html>
