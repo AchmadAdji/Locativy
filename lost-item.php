@@ -29,7 +29,7 @@ $result_reports = $conn->query($sql_reports);
 
 if ($result_reports->num_rows > 0) {
     while ($row = $result_reports->fetch_assoc()) {
-        $description = isset($row['description']) ? $row['description'] : '';
+        $description = isset($row['spesification']) ? $row['spesification'] : '';
         if (str_word_count($description) > 20) {
             $words = explode(' ', $description);
             $description = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
@@ -37,8 +37,8 @@ if ($result_reports->num_rows > 0) {
         $items[] = [
             'title' => $row['item'],
             'img' => $row['file_path'],
-            'description' => $description,
             'dataName' => $row['id'],
+            'username' => $row['username'],
             'specification' => $row['specification'],
             'quantity' => $row['quantity'],
             'location' => $row['location'],
@@ -120,7 +120,7 @@ $conn->close();
     <div class="container" style="margin-top: 5rem;">
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
-                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['description'] ?>', '<?= $item['dataName'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
+                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['dataName'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
                     <div class="card text-white">
                         <img src="<?= $item['img'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
                         <div class="card-body">
