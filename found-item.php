@@ -120,7 +120,7 @@ $conn->close();
     <div class="container" style="margin-top: 5rem;">
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
-                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['dataName'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
+                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
                     <div class="card text-white">
                         <img src="<?= $item['img'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
                         <div class="card-body">
@@ -159,7 +159,7 @@ $conn->close();
                         </div>
                         <div class="col-md-6">
                             <h5 id="modal-title" class="mt-3"></h5>
-                            <p id="modal-description"></p>
+                            <p id="modal-username"></p>
                             <p id="modal-specification"></p>
                             <p id="modal-quantity"></p>
                             <p id="modal-location"></p>
@@ -188,10 +188,10 @@ $conn->close();
             }
         }
 
-        function showDetails(title, img, description, dataName, specification, quantity, location, time_found) {
+        function showDetails(title, img, username, specification, quantity, location, time_found) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-img').src = img;
-            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-username').innerText = username;
             document.getElementById('modal-specification').innerText = "Specification: " + specification;
             document.getElementById('modal-quantity').innerText = "Quantity: " + quantity;
             document.getElementById('modal-location').innerText = "Location: " + location;
