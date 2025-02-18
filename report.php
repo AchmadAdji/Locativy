@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="footer.css">
       <link rel="stylesheet" href="form-report.css">
+      <link rel="stylesheet" href="navbar.css">
       <!-- Google Font -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="aboutus.html">About Us</a>
+                  <a class="nav-link" href="aboutus.html">About Us</a>
                 </li>
               </ul>
               <div class="button">
