@@ -201,43 +201,43 @@ $conn->close();
         }
     </script>
 
-  <!-- footer -->
+  <!-- Footer Section -->
   <footer class="footer">
-    <div class="footer-content" style="margin-top: 50px;">
-        <div class="footer-column">
-            <h3>Get started</h3>
-            <ul>
-              <li><a href="regis.php">Create an account</a></li>
-              <li><a href="login.php">Logout</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Get help</h3>
-            <ul>
-                <li><a href="report.php">Reporting</a></li>
-                <li><a href="lost-item.php">Lost item</a></li>
-                <li><a href="found-item.php">Found item</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>About us</h3>
-            <ul>
-                <li><a href="aboutus.html">Our Team</a></li>
-            </ul>
-        </div>
-    </div>
+      <div class="footer-content" style="margin-top: 50px;">
+          <div class="footer-column">
+              <h3>Get started</h3>
+              <ul>
+                <li><a href="regis.php">Create an account</a></li>
+                <li><a href="login.php">Logout</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Get help</h3>
+              <ul>
+                  <li><a href="report.php">Reporting</a></li>
+                  <li><a href="lost-item.php">Lost item</a></li>
+                  <li><a href="found-item.php">Found item</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>About us</h3>
+              <ul>
+                  <li><a href="aboutus.html">Our Team</a></li>
+              </ul>
+          </div>
+      </div>
 
-        <!-- Social Media & Logo -->
-        <div class="footer-bottom">
-            <div class="social-icons">
-              <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
-                <i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i>
-                <i class="fa-solid fa-envelope" style="color: #355aa9;"></i>
-            </div>
-            <div class="footer-logo">
-                <img src="assets/image/Logo Locativy - Blue.png" alt="Locativy">
-            </div>
-        </div>
-      </footer>
+      <!-- Social Media & Logo -->
+      <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/locativy?igsh=bnk4ZHd1aXB1a2E4"><i class="fa-brands fa-square-instagram" style="color: #355aa9;"></i></a>
+            <a href="https://twitter.com/locativy?t=hg_s145hPnGToCT3B0c3mQ&s=09"><i class="fa-brands fa-x-twitter" style="color: #355aa9;"></i></a>
+            <a href="mailto:Locativy@gmail.com"><i class="fa-solid fa-envelope" style="color: #355aa9;"></i></a>
+          </div>
+          <div class="footer-logo">
+              <img src="assets/image/Logo Locativy - Blue.png" alt="Locativy">
+          </div>
+      </div>
+    </footer>
 </body>
 </html>
