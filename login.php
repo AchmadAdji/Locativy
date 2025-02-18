@@ -92,8 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
                 </div>
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  
-                    <a href="forgotpass.php" class="text-decoration-none">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn btn-primary w-100" style="background-color: #355aa9">Log in</button>
             </form>
