@@ -121,7 +121,7 @@ $conn->close();
             </div>
         </nav>
     </div>
-    <h2 style="color: #355aa9; justify-content: center;">Lost Item</h2>
+    <h2 style="color: #355aa9; justify-content: center; text-align: center;">Lost Item</h2>
 
     <!-- List Page -->
     <div class="container" style="margin-top: 5rem;">
