@@ -70,7 +70,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">About Us</a>
+                <a class="nav-link" href="loca/aboutus.html">About Us</a>
               </li>
             </ul>
             <div class="button">
