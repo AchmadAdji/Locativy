@@ -98,7 +98,7 @@ $conn->close();
                         <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
                     
                     <div class="button">
-                        <a class="login-button" type="submit" href="report.php">Report</a>
+                        <a class="login-button" type="submit" href="report.php">Report!</a>
                     </div>
                 </ul>
                 
