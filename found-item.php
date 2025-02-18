@@ -62,6 +62,7 @@ $conn->close();
     <link rel="stylesheet" href="assets/css/listpage.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         let isLoggedIn = true; // Ganti dengan pengecekan dari backend
 
