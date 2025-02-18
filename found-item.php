@@ -123,7 +123,8 @@ $conn->close();
     </div>
 
     <!-- List Page -->
-    <div class="container" style="margin-top: 5rem;">
+    <div class="container" style="margin-top: 3rem;">
+    <h2 style="color: #355aa9; margin-left: 3rem;">Lost Item</h2><br>
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
                 <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['dataName'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">

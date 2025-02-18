@@ -55,7 +55,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locativy - List Item Found</title>
+    <title>Locativy - List Item Lost</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -124,7 +124,7 @@ $conn->close();
     
     <!-- List Page -->
     <div class="container" style="margin-top: 3rem;">
-        <h2 style="color: #355aa9; margin-left: 5rem;">Lost Item</h2><br>
+        <h2 style="color: #355aa9; margin-left: 3rem;">Lost Item</h2><br>
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
                 <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['dataName'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
