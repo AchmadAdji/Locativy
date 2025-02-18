@@ -70,7 +70,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" onclick="showmessage()">About Us</a>
+                <a class="nav-link" href="aboutus.html">About Us</a>
               </li>
             </ul>
             <div class="button">
@@ -316,17 +316,15 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-              
-          </div> 
-          
-      </div>
-  </section>
+            </div>    
+          </div>
+      </section>
 
         
       <!-- Call to Action Section -->
-<div class="cta-container">
-  <h4>Ready to get started?</h4>
-</div>
+    <div class="cta-container">
+      <h4>Ready to get started?</h4>
+    </div>
 
 <!-- Footer Section -->
 <footer class="footer">
@@ -374,7 +372,5 @@
       </div>
   </div>
 </footer>
-
-  
 </body>
 </html>

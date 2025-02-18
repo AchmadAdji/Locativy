@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
                     </ul>
                     <div class="button">
-                        <a class="login-button" type="submit" href="report.php">Lapor!</a>
+                        <a class="login-button" type="submit" href="report.php">Report</a>
                     </div>
                 </div>
             </div>
