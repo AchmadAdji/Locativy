@@ -62,36 +62,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg fixed-top">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="#">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end">
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/#/chat/a7c4ae44-93d0-4564-88d1-1f18c77f1984">Chat with Ai</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Items</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="lost-item.php">Lost item</a></li>
-                                <li><a class="dropdown-item" href="found-item.php">Found items</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-                    </ul>
-                    <div class="button">
-                        <a class="login-button" type="submit" href="report.php">Report</a>
-                    </div>
-                </div>
+          <img class="navbar-brand" src="assets/image/Logo Locativy.png" style="height: 50px;" href="#">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmeqx7bp.chat.qbusiness.us-west-2.on.aws/">Chat with Ai</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                    Items
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lost-item.php">Lost item</a></li>
+                    <li><a class="dropdown-item" href="#">Found items</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="aboutus.html">About Us</a>
+                </li>
+              </ul>
+              <div class="button">
+                <a class="login-button" type="submit" href="report.php">Report!</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <section class="content" style="margin-top: 6rem; margin-bottom: 3rem;">
       <div class="container-fluid">
