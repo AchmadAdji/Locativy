@@ -5,7 +5,7 @@ $user = "root"; // Sesuaikan dengan user database kamu
 $pass = ""; // Sesuaikan dengan password database kamu
 $db = "auth"; // Sesuaikan dengan nama database kamu
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
 // Periksa koneksi
 if ($conn->connect_error) {
@@ -29,10 +29,10 @@ $result_reports = $conn->query($sql_reports);
 
 if ($result_reports->num_rows > 0) {
     while ($row = $result_reports->fetch_assoc()) {
-        $description = isset($row['spesification']) ? $row['spesification'] : '';
-        if (str_word_count($description) > 20) {
-            $words = explode(' ', $description);
-            $description = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
+        $specification = isset($row['specification']) ? $row['specification'] : '';
+        if (str_word_count($specification) > 20) {
+            $words = explode(' ', $specification);
+            $specification = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
         }
         $items[] = [
             'title' => $row['item'],
@@ -120,7 +120,7 @@ $conn->close();
     <div class="container" style="margin-top: 5rem;">
         <div class="row" id="items-container">
             <?php foreach ($items as $item): ?>
-                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
+                <div class="col-md-3 mb-4 item-card" data-title="<?= strtolower($item['title']) ?>" onclick="showDetails('<?= $item['title'] ?>', '<?= $item['img'] ?>', '<?= $item['dataName'] ?>', '<?= $item['username'] ?>', '<?= $item['specification'] ?>', '<?= $item['quantity'] ?>', '<?= $item['location'] ?>', '<?= $item['time_found'] ?>')">
                     <div class="card text-white">
                         <img src="<?= $item['img'] ?>" class="card-img-top" alt="<?= $item['title'] ?>">
                         <div class="card-body">
@@ -158,8 +158,8 @@ $conn->close();
                             <img id="modal-img" src="" class="img-fluid" alt="Item Image">
                         </div>
                         <div class="col-md-6">
-                            <h5 id="modal-title" class="mt-3"></h5>
-                            <p id="modal-description"></p>
+                            <h4 id="modal-title" class="mt-3"></h4><p>
+                            <p id="modal-username"></p>
                             <p id="modal-specification"></p>
                             <p id="modal-quantity"></p>
                             <p id="modal-location"></p>
@@ -188,20 +188,21 @@ $conn->close();
             }
         }
 
-        function showDetails(title, img, username, specification, quantity, location, time_found) {
+        function showDetails(title, img, description, username, specification, quantity, location, time_found) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-img').src = img;
-            document.getElementById('modal-username').innerText = username;
-            document.getElementById('modal-specification').innerText = "Specification: " + specification;
-            document.getElementById('modal-quantity').innerText = "Quantity: " + quantity;
-            document.getElementById('modal-location').innerText = "Location: " + location;
-            document.getElementById('modal-time-found').innerText = "Time Found: " + time_found;
+            document.getElementById('modal-username').innerHTML = "<b>Name: </b>" + username;
+            document.getElementById('modal-specification').innerHTML = "<b>Specification: </b>" + specification;
+            document.getElementById('modal-quantity').innerHTML = "<b>Quantity: </b>" + quantity;
+            document.getElementById('modal-location').innerHTML = "<b>Location: </b>" + location;
+            document.getElementById('modal-time-found').innerHTML = "<b>Time Found: </b>" + time_found;
             var myModal = new bootstrap.Modal(document.getElementById('detailsModal'));
             myModal.show();
         }
     </script>
-    <!-- Footer -->
-  <footer class="footer">
+
+<!-- footer -->
+<footer class="footer">
     <div class="footer-content" style="margin-top: 50px;">
         <div class="footer-column">
             <h3>Get started</h3>

@@ -29,10 +29,10 @@ $result_reports = $conn->query($sql_reports);
 
 if ($result_reports->num_rows > 0) {
     while ($row = $result_reports->fetch_assoc()) {
-        $description = isset($row['spesification']) ? $row['spesification'] : '';
-        if (str_word_count($description) > 20) {
-            $words = explode(' ', $description);
-            $description = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
+        $specification = isset($row['specification']) ? $row['specification'] : '';
+        if (str_word_count($specification) > 20) {
+            $words = explode(' ', $specification);
+            $specification = implode(' ', array_slice($words, 0, round(count($words) * 2 / 3))) . '...';
         }
         $items[] = [
             'title' => $row['item'],
@@ -158,8 +158,8 @@ $conn->close();
                             <img id="modal-img" src="" class="img-fluid" alt="Item Image">
                         </div>
                         <div class="col-md-6">
-                            <h5 id="modal-title" class="mt-3"></h5>
-                            <p id="modal-description"></p>
+                            <h4 id="modal-title" class="mt-3"></h4><p>
+                            <p id="modal-username"></p>
                             <p id="modal-specification"></p>
                             <p id="modal-quantity"></p>
                             <p id="modal-location"></p>
@@ -188,14 +188,14 @@ $conn->close();
             }
         }
 
-        function showDetails(title, img, description, dataName, specification, quantity, location, time_found) {
+        function showDetails(title, img, description, username, specification, quantity, location, time_found) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-img').src = img;
-            document.getElementById('modal-description').innerText = description;
-            document.getElementById('modal-specification').innerText = "Specification: " + specification;
-            document.getElementById('modal-quantity').innerText = "Quantity: " + quantity;
-            document.getElementById('modal-location').innerText = "Location: " + location;
-            document.getElementById('modal-time-found').innerText = "Time Found: " + time_found;
+            document.getElementById('modal-username').innerHTML = "<b>Name: </b>" + username;
+            document.getElementById('modal-specification').innerHTML = "<b>Specification: </b>" + specification;
+            document.getElementById('modal-quantity').innerHTML = "<b>Quantity: </b>" + quantity;
+            document.getElementById('modal-location').innerHTML = "<b>Location: </b>" + location;
+            document.getElementById('modal-time-found').innerHTML = "<b>Time Found: </b>" + time_found;
             var myModal = new bootstrap.Modal(document.getElementById('detailsModal'));
             myModal.show();
         }
